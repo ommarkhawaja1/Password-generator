@@ -1,9 +1,46 @@
 // Assignment code here
+// var randomIndex = function (min,max) {
+  // fix this, this is copied from Robot Gladiators
+  // generate a random number, and round it down
+  // var value = Math.floor(math.random() * (max - min) + min);
+  // return that value so we can use it
+  // return value;
+// }
 
-// Get references to the #generate element
+// var randomNumber = function(min, max) {
+  // var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  // return value;
+// };
+
 var generateBtn = document.querySelector("#generate");
-var abc = ["a", "b", "c"]
-var upperTrue = false;
+// const abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// const numb = "0123456789";
+// const symbols = "!@#$%^&*_-+="
+
+function generatePassword () {
+generateBtn.addEventListener("click", writePassword);
+var promptNumber = window.prompt("How many characters long would you like your password to be? Note: must be between 8-128 characters")
+promptNumber = parseInt(promptNumber);
+if (promptNumber < 8 || promptNumber > 128) {
+  window.alert("Your password cannot be that length")
+  writePassword();
+} else if (promptNumber >= 8 && promptNumber <= 128 ) {
+  chooseCharacters();
+} else {
+  window.alert ("You need to enter a number between 8 and 128. Try again.")
+  writePassword();
+}
+
+
+
+}
+
+
+
+// var abc = ["a", "b", "c"]
+// var upperTrue = false;
+
 
 // Write password to the #password input
 function writePassword() {
@@ -13,6 +50,28 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+// var chooseCharacters = fucntion () {
+//   var charactersArray = [];
+
+//   var promptChooseLowercase = window.confirm("Would you like to use lowercase letters in your password?");
+//   if (promptChooseLowercase) {
+//     charactersArray.push(lowercaseArray);
+//   } else {
+//   };
+
+// var promptChooseUppercase = window.confirm("Would you like to use uppercase letters in your password?");
+//   if (promptChooseUppercase) [
+//     charactersArray.concat(uppercaseArray);
+//   ] else {
+// };
+
+// var promptChooseSymbols = window.confirm("Would you like to use symbols in your password?");
+//   if (promptChooseSymbols) [
+//     charactersArray.concat(symbolsArray);
+//   ] else {
+// };
+// console.log(charactersArray)
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
